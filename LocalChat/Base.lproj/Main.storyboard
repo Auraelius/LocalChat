@@ -1,25 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZX-wx-F5g">
+                                <rect key="frame" x="0.0" y="523" width="320" height="45"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oiT-wt-jna">
+                                        <rect key="frame" x="8" y="7" width="216" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="O4j-eX-OuQ"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOR-B7-teq">
+                                        <rect key="frame" x="242" y="7" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="u13-Au-DVM"/>
+                                        </constraints>
+                                        <state key="normal" title="Send">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oiT-wt-jna" firstAttribute="leading" secondItem="ZZX-wx-F5g" secondAttribute="leadingMargin" id="h8a-BV-aI0"/>
+                                    <constraint firstAttribute="trailing" secondItem="zOR-B7-teq" secondAttribute="trailing" constant="32" id="mXM-c3-4MT"/>
+                                    <constraint firstItem="zOR-B7-teq" firstAttribute="bottom" secondItem="ZZX-wx-F5g" secondAttribute="bottomMargin" id="qli-LJ-ASF"/>
+                                    <constraint firstItem="zOR-B7-teq" firstAttribute="top" secondItem="oiT-wt-jna" secondAttribute="top" id="rYb-qe-dc2"/>
+                                    <constraint firstItem="zOR-B7-teq" firstAttribute="centerY" secondItem="ZZX-wx-F5g" secondAttribute="centerY" id="v8h-fg-Wty"/>
+                                    <constraint firstItem="zOR-B7-teq" firstAttribute="leading" secondItem="oiT-wt-jna" secondAttribute="trailing" constant="18" id="zI3-1C-5if"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZZX-wx-F5g" secondAttribute="trailing" id="Jvv-KI-R6d"/>
+                            <constraint firstItem="ZZX-wx-F5g" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="YB2-Mb-oS2"/>
+                            <constraint firstItem="ZZX-wx-F5g" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="d6x-B8-rJJ"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="chatText" destination="oiT-wt-jna" id="nhS-zU-Ebh"/>
+                        <outlet property="sendButton" destination="zOR-B7-teq" id="Pgf-6d-dWw"/>
+                        <outlet property="textEntryView" destination="ZZX-wx-F5g" id="ci8-kx-lBP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="583" y="469"/>
         </scene>
     </scenes>
 </document>
